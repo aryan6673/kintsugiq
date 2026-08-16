@@ -41,25 +41,27 @@ export default function PotTiers() {
     ]
 
     return (
-        <div className="flex flex-col gap-4 min-h-screen">
+        <div className="flex flex-col gap-4 min-h-screen px-4 sm:px-6 md:px-8">
             <div className="flex gap-2 flex-col items-center w-full">
-                <h1 className={`${kalam.className} text-[#2a1a08] text-4xl font-bold`}>Pot tiers</h1>
-                <p className={`text-lg ${kalam.className} text-[#ac9453]`}>The more you fix,the Shinier your pot</p>
+                <h1 className={`${kalam.className} text-[#2a1a08] text-2xl sm:text-3xl md:text-4xl font-bold text-center`}>Pot tiers</h1>
+                <p className={`text-base sm:text-lg ${kalam.className} text-[#ac9453] text-center`}>The more you fix, the Shinier your pot</p>
             </div>
-            <div className="md:grid md:grid-cols-2 gap-12 flex flex-col justify-center items-center md:place-items-center justify-center ">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mt-8 sm:mt-12 justify-center items-center">
                 {Cards.map((card) => (
-                    <div key={card.id} className="col-span-1 lg:w-120 xl:w-160 h-80 rounded-4xl  bg-[#2A1A08] px-6 py-6 justify-between border-4 border-[#c9a030] border-dashed flex flex-col gap-2 cursor-grab transition-all duration-300 hover:scale-102 hover:shadow-[3px_8px_0_rgba(26,18,9,0.18)]  hover:-translate-y-2">
-                        <div className="select-none">
-                           <Image src={card.image} alt={card.title} width={120} height={120} /> 
+                    <div key={card.id} className="col-span-1 w-full sm:w-80 md:w-96 lg:w-120 xl:w-full h-auto rounded-4xl bg-[#2A1A08] px-4 sm:px-6 py-4 sm:py-6 justify-between border-4 border-[#c9a030] border-dashed flex flex-col gap-3 sm:gap-4 cursor-grab transition-all duration-300 hover:scale-102 hover:shadow-[3px_8px_0_rgba(26,18,9,0.18)] hover:-translate-y-2">
+                        <div className="select-none flex-shrink-0 w-full flex justify-start">
+                            <div className="relative w-20 h-20 sm:w-28 sm:h-28">
+                                <Image src={card.image} alt={card.title} width={112} height={112} style={{ objectFit: 'contain' }} />
+                            </div>
                         </div>
-                        <div className={`flex gap-2 text-[#F5E4B0] font-medium text-2xl ${kalam.className}`}>
-                            <div>{card.icon}</div>
-                            <div>{card.title}</div>
+                        <div className={`flex gap-2 text-[#F5E4B0] font-medium text-lg sm:text-xl md:text-2xl ${kalam.className}`}>
+                            <div className="flex-shrink-0">{card.icon}</div>
+                            <div className="text-left">{card.title}</div>
                         </div>
-                        <div className={`text-[#A3926D] text-xl ${kalam.className}`}>
+                        <div className={`text-[#A3926D] text-sm sm:text-base md:text-lg ${kalam.className} text-left`}>
                             {card.description}
                         </div>
-                        <div className={`${kalam.className} bg-[#3d2A08] w-fit text-xl px-4 py-2 rounded-3xl items-center text-center justify-center flex text-[#c9a030]`}>
+                        <div className={`${kalam.className} bg-[#3d2A08] w-fit text-sm sm:text-base px-3 sm:px-4 py-2 rounded-3xl items-center text-center justify-center flex text-[#c9a030]`}>
                             {card.tags}
                         </div>
                     </div>
